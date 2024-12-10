@@ -4,8 +4,11 @@ import { FaLocationArrow } from 'react-icons/fa'
 import MagicButton from './ui/MagicButton'
 import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
+import { FlipWords } from './ui/FlipWords';
 
 const Hero = () => {
+	const words = 'Transforming Concepts into';
+	const flipWords = ['Powerful Solutions', 'Seamless User Experiences', 'Tangible Outcomes'];
   return (
     <div className='pb-20 pt-36'>
         <div>
@@ -27,8 +30,9 @@ const Hero = () => {
 
                 <TextGenerateEffect
                     className='text-center text-[40px] md:text-5xl lg:text-6xl'
-                    words='Transforming Concepts into Seamless User Experiences'
+                    words={words}
                 />
+								<FlipWords className='font-bold text-center text-[40px] md:text-5xl lg:text-6xl my-4' words={flipWords}/>
 
                 <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
                     Hi, I&apos;m Jason, a Full-Stack Developer based in Taiwan.
