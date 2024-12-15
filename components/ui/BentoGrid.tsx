@@ -4,9 +4,11 @@ import { BackgroundGradientAnimation } from './GradientBg';
 import GridGlobe from './GridGlobe';
 // import Lottie from 'react-lottie';
 import { useState } from 'react';
-import animationData from "@/data/confetti.json";
+import animationData from '@/data/confetti.json';
 import { IoCopyOutline } from 'react-icons/io5';
 import MagicButton from './MagicButton';
+import { techStacks } from '@/data'
+import { InfiniteMovingWords } from './InfiniteMovingWords';
 import dynamic from 'next/dynamic';
 
 const Lottie = dynamic(() => import('react-lottie'), { ssr: false });
@@ -49,8 +51,6 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ['ReactJS', 'Express', 'Typescript'];
-  const rightLists = ['VueJS', 'NuxtJS', 'GraphQL'];
   const [copied, setCopied] = useState(false);
 
   const defaultOptions = {
@@ -58,12 +58,12 @@ export const BentoGridItem = ({
     autoplay: copied,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+      preserveAspectRatio: 'xMidYMid slice',
     },
   };
 
   const handleCopy = () => {
-    const text = "s0974092@gmail.com";
+    const text = 's0974092@gmail.com';
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 3000)
@@ -127,28 +127,11 @@ export const BentoGridItem = ({
             <div className='flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2'>
               {/* tech stack lists */}
               <div className='flex flex-col gap-3 md:gap-3 lg:gap-8'>
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className='lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]'
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className='lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]'></span>
-              </div>
-              <div className='flex flex-col gap-3 md:gap-3 lg:gap-8'>
-                <span className='lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]'></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className='lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]'
-                  >
-                    {item}
-                  </span>
-                ))}
+                <InfiniteMovingWords
+                  items={techStacks}
+                  direction='down'
+                  speed='fast'
+                  className='pr-8' />
               </div>
             </div>
           )}

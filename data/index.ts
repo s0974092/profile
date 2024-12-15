@@ -1,3 +1,5 @@
+export const techStacks = ['Java', 'Spring Boot', 'TypeScript', 'Angular', 'Next.js', 'Vue.js'];
+
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
