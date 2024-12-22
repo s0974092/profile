@@ -1,10 +1,12 @@
+import { link } from "fs";
+
 export const techStacks = ['Java', 'Spring Boot', 'TypeScript', 'Angular', 'Next.js', 'Vue.js'];
 
 export const navItems = [
-    { name: 'About', link: '#about' },
-    { name: 'Projects', link: '#projects' },
-    { name: 'Testimonials', link: '#testimonials' },
-    { name: 'Contact', link: '#contact' },
+    { name: 'About', link: '#about', img: '/about.svg' },
+    { name: 'Projects', link: '#projects', img: '/rocket.svg' },
+    // { name: 'Testimonials', link: '#testimonials' },
+    { name: 'Contact', link: '#contact', img: '/email.svg' },
   ];
   
   export const gridItems = [
@@ -77,7 +79,7 @@ export const navItems = [
       title: 'Promptopia: The entry brick into the new world of Nextjs',
       des: 'Develop a Next.js application that highlights the key features of Next.js along with a comprehensive CRUD AI Prompt sharing system utilizing a MongoDB database and implementing NextAuth authentication.',
       img: '/promptor.svg',
-      iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/three.svg', '/fm.svg'],
+      iconLists: ['/next.svg', '/mongodb.svg', '/ts.svg', '/next-auth.png', '/tail.svg'],
       link: 'https://promptor-hub.vercel.app/',
     },
     {
@@ -85,7 +87,7 @@ export const navItems = [
       title: 'Podcastr: Hosting knowledge in the world',
       des: 'A cutting-edge AI SaaS platform that enables users to create, discover, and enjoy podcasts with advanced features like text-to-audio conversion with multi-voice AI, podcast thumbnail Image generation and seamless playback.',
       img: '/podcastr.svg',
-      iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/stream.svg', '/c.svg'],
+      iconLists: ['/next.svg', '/shadcn.svg', '/open-ai.svg', 'huggingface.svg', '/c.svg', '/convex.svg'],
       link: 'https://podcastr-hub.vercel.app/',
     },
   ];
@@ -191,13 +193,19 @@ export const navItems = [
     {
       id: 1,
       img: '/git.svg',
+      name: 'Github',
+      link: 'https://github.com/s0974092',
     },
     {
       id: 2,
-      img: '/twit.svg',
+      img: '/cake.svg',
+      name: 'Cake',
+      link: 'https://www.cake.me/s--f8iUBz5X8DFbzxV3-TzDCw--/Jas0nLin',
     },
     {
       id: 3,
       img: '/link.svg',
+      name: 'Linkedin',
+      link: 'https://www.linkedin.com/in/yu-jie-lin-58524a125/',
     },
   ];

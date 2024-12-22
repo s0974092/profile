@@ -8,6 +8,7 @@ import {
 } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { socialMedia } from '@/data';
 
 export const FloatingNav = ({
   navItems,
@@ -16,7 +17,7 @@ export const FloatingNav = ({
   navItems: {
     name: string;
     link: string;
-    icon?: JSX.Element;
+    img?: string;
   }[];
   className?: string;
 }) => {
@@ -79,12 +80,26 @@ export const FloatingNav = ({
               'relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500'
             )}
           >
-            <span className='block sm:hidden'>{navItem.icon}</span>
+            {/* <span className='block sm:hidden'>{navItem.img}</span> */}
             {/* add !cursor-pointer */}
             {/* remove hidden sm:block for the mobile responsive */}
-            <span className=' text-sm !cursor-pointer'>{navItem.name}</span>
+            {/* <span className=' text-sm !cursor-pointer'>{navItem.name}</span> */}
+              <img className='block sm:block max-sm:block md:hidden' src={navItem.img} alt='icons' width={20} height={20} />
+              <span className='block text-sm !cursor-pointer sm:hidden max-sm:hidden md:block'>{navItem.name}</span>
           </Link>
         ))}
+        {socialMedia.map((info) => (
+            <Link
+              key={info.id} href={info.link} target='_blank'
+              className={cn(
+                'relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500'
+              )}
+            >
+              {/* <span className='block sm:hidden'>{info.img}</span> */}
+              <img className='block sm:block max-sm:block md:hidden' src={info.img} alt='icons' width={20} height={20} />
+              <span className='block text-sm !cursor-pointer sm:hidden max-sm:hidden md:block'>{info.name}</span>
+            </Link>
+          ))}
         {/* remove this login btn */}
         {/* <button className='border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full'>
           <span>Login</span>
